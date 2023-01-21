@@ -6,8 +6,9 @@ To run the project outside of a docker container
 1. git clone
 2. Create an `.env` file containing the `DB_URL` variable, a postgres connection string to some postgres istance
 3. Run `npm run dev`
-This will run database migrations, populate the database with some seed data, start an HTTP server on port `3000`.
-You can then perform a `GET` request to `localhost:3000/army?n=100`
+
+This will run database migrations and start an HTTP server on port `3000`.
+You can then perform a `GET` or `DELETE` request to `http://localhost:3000/ip/8.8.8.8`
 
 You can run unit tests with `npm run test`
 
