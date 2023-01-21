@@ -4,7 +4,7 @@
 
 To run the project outside of a docker container
 1. git clone
-2. Create an `.env` file containing the `DB_URL` variable, a postgres connection string to some postgres istance
+2. On the root folder, create an `.env` file containing the `DB_URL` variable, a postgres connection string to some postgres istance
 3. Run `npm run dev`
 
 This will run database migrations and start an HTTP server on port `3000`.
@@ -19,8 +19,8 @@ In the `src` code, there is some convenient layering that makes the code testabl
 - `validators`: here user input stateless validation occours  
 - `controllers`: controller responsability is just to handle http communication using `req` and `res` express response object as well as `next` function if errors occours  
 - `services`: here you can find the business logic. Each controller should call the relative service. Services take as inputs and give as output only variables with primitive (or custom) types; services can't see the context of the express application. They can use `utils` or `data_layer` for their business  
-- `data_layer`: a set of functions that perform database queries. Thoose function wrap our query builder ([knex](https://knexjs.org/))  
-- `utils`: utilities used by services or data_layer. Here is where the unbiased random generation was implemented  
+- `data_layer`: a set of functions that perform database queries. Thoose function wraps our query builder ([knex](https://knexjs.org/))  
+- `utils`: utilities used by services or data_layer.
 
 ### Types
 In the `types` directory you can find custom types. Here all used types and interfaces are defined. Request and Response object are extended with generics too.
